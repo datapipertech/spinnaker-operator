@@ -17,14 +17,14 @@
 VERSION_TYPE    ?= "snapshot" # Must be one of: "snapshot", "rc", or "release"
 BRANCH_OVERRIDE ?=
 VERSION 	 	?= $(shell build-tools/version.sh $(VERSION_TYPE) $(BRANCH_OVERRIDE))
-REGISTRY_ORG    ?= "armory"
+REGISTRY_ORG    ?= "gcr.io/pso-supreme-cicd-99s2"
 REDHAT_PID      ?= ""
 OS      	 	?= $(shell go version | cut -d' ' -f 4 | cut -d'/' -f 1)
 ARCH    	 	?= $(shell go version | cut -d' ' -f 4 | cut -d'/' -f 2)
 NAMESPACE 	 	?= "spinnaker-operator"
 PWD 		  	= $(shell pwd)
 
-REGISTRY        ?= docker.io
+REGISTRY        ?= gcr.io/pso-supreme-cicd-99s2
 REDHAT_REGISTRY ?= scan.connect.redhat.com
 SRC_DIRS        := cmd pkg integration-tests
 COMMAND         := cmd/manager/main
